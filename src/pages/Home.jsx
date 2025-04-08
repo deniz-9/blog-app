@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { fetchPosts } from '../api/blogAPI';
 import { Link } from 'react-router-dom';
+import BlogCard from '../components/BlogCard'; 
+ 
 
 export const Home = () => {
   const { user } = useAuth();
@@ -33,15 +35,7 @@ export const Home = () => {
             <p className="text-gray-600">Henüz hiç gönderi bulunmamaktadır.</p>
           ) : (
             posts.map(post => (
-              <div key={post.id} className="border border-gray-300 rounded-md p-4 mb-4">
-                <h2 className="text-xl font-semibold">
-                  <Link to={`/posts/${post.id}`} className="text-blue-500 hover:underline">{post.title}</Link>
-                </h2>
-                <p className="text-gray-600">
-                  {post.content ? post.content.slice(0, 100) : "İçerik yok..."}...
-                </p>
-                <p className="text-sm text-gray-400">Yazar: {post.author}</p>
-              </div>
+              <BlogCard key={post.id} post={post} />
             ))
           )}
         </>

@@ -17,14 +17,42 @@
     {
       "id": "fed2",
       "title": "ilk gönderi",
-      "body": "İçerik burada olacak.",
+      "content": "İçerik burada olacak.",
+      "author": "test@test.com",
       "createdAt": "2025-04-08T12:41:09.057Z"
     },
     {
       "id": "2010",
       "title": "yeni gönderi",
-      "body": "yeni gönderi",
+      "content": "yeni gönderi",
+      "author": "test@test.com",
       "createdAt": "2025-04-08T12:57:35.024Z"
+    },
+    {
+      "id": "20a7",
+      "title": "3.test",
+      "content": "3.test",
+      "createdAt": "2025-04-08T13:23:01.988Z"
+    },
+    {
+      "id": "7d7c",
+      "title": "4. test ",
+      "content": "test 4",
+      "createdAt": "2025-04-08T14:38:30.512Z",
+      "author": "test@test.com"
+    },
+    {
+      "id": "e666",
+      "title": "5.test",
+      "content": "5.test gönderisi",
+      "createdAt": "2025-04-08T14:39:05.464Z",
+      "author": "test@test.com"
+    },
+    {
+      "id": "1e84",
+      "title": "6.test",
+      "content": "6.test",
+      "createdAt": "2025-04-08T14:47:11.556Z"
     }
   ]
 }
