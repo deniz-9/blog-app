@@ -33,11 +33,11 @@ Follow these steps to run the project locally:
    git clone https://github.com/your-username/blog-app.git
    cd blog-app
 2. ** Install Dependencies: **
+ 
+ npm install
 
-```bash npm install
 
-
-3. **Start JSON Server for the Blog API:**
+4. **Start JSON Server for the Blog API:**
 
 npx json-server --watch ./src/db.json --port 3001
 
