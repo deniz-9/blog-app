@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '../contexts/AuthContext';
 
 const NewPost = () => {
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [content, setContent] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { user } = useAuth(); // kullanıcı bilgisini çekiyoruz
 
-  // Yeni gönderiyi oluşturma
   const createPost = async (postData) => {
     try {
       const response = await axios.post('http://localhost:3001/posts', postData);
@@ -24,10 +25,11 @@ const NewPost = () => {
     e.preventDefault();
     const postData = {
       title,
-      body,
+      content,
+      author: user?.email || 'Bilinmeyen',
       createdAt: new Date().toISOString(),
     };
-    createPost(postData);  // Gönderi oluşturuluyor
+    createPost(postData);
   };
 
   return (
@@ -50,8 +52,8 @@ const NewPost = () => {
           <label htmlFor="body" className="block text-sm font-medium">İçerik</label>
           <textarea
             id="body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
             className="w-full border p-2 mt-1"
             rows="6"
             required
