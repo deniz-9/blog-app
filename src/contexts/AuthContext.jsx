@@ -1,36 +1,24 @@
 import React, { createContext, useState, useContext } from 'react';
-import { loginUser, registerUser } from '../api/blogAPI';
 
 const AuthContext = createContext();
-
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // Kullanıcı girişi
-  const login = async (email, password) => {
-    try {
-      const loggedInUser = await loginUser(email, password);
-      setUser(loggedInUser);
-    } catch (error) {
-      console.error('Login failed', error);
+  const login = (email, password) => {
+    // Örnek olarak basit bir kullanıcı doğrulama
+    if (email === 'test@test.com' && password === 'password') {
+      setUser({ email });
+    } else {
+      throw new Error('Geçersiz kullanıcı bilgileri');
     }
   };
 
-  // Yeni kullanıcı kaydı
-  const register = async (email, password) => {
-    try {
-      const newUser = await registerUser({ email, password });
-      setUser(newUser);
-    } catch (error) {
-      console.error('Registration failed', error);
-    }
+  const register = (email, password) => {
+    // Burada kaydolan kullanıcıyı yönetebilirsiniz
+    setUser({ email });
   };
 
-  // Kullanıcı çıkışı
   const logout = () => {
     setUser(null);
   };
@@ -40,4 +28,8 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+export const useAuth = () => {
+  return useContext(AuthContext);
 };

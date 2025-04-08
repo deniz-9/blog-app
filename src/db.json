@@ -1,19 +1,30 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "email": "test@test.com",
-        "password": "123456"
-      }
-    ],
-    "posts": [
-      {
-        "id": 1,
-        "title": "İlk Blog Gönderisi",
-        "content": "Bu bir test gönderisidir.",
-        "author": "test@test.com",
-        "createdAt": "2025-04-08T10:00:00.000Z"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "1",
+      "email": "test@test.com",
+      "password": "123456"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "İlk Blog Gönderisi",
+      "content": "Bu bir test gönderisidir.",
+      "author": "test@test.com",
+      "createdAt": "2025-04-08T10:00:00.000Z"
+    },
+    {
+      "id": "fed2",
+      "title": "ilk gönderi",
+      "body": "İçerik burada olacak.",
+      "createdAt": "2025-04-08T12:41:09.057Z"
+    },
+    {
+      "id": "2010",
+      "title": "yeni gönderi",
+      "body": "yeni gönderi",
+      "createdAt": "2025-04-08T12:57:35.024Z"
+    }
+  ]
+}
