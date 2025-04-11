@@ -30,17 +30,20 @@ Follow these steps to run the project locally:
 1. **Fork and Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/blog-app.git
+   git clone https://github.com/deniz-9/blog-app.git
    cd blog-app
 2. ** Install Dependencies: **
- 
+
+```bash
  npm install
 
-
+```
 4. **Start JSON Server for the Blog API:**
 
+```bash
 npx json-server --watch ./src/db.json --port 3001
 
+```
 4. **In a New Terminal, Start the React Application:**
 
 ```bash
